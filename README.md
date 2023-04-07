@@ -1,4 +1,6 @@
-Это исходный код (Godot-проект) игры One Picture Quest версии 0.1. Функционал из диздока реализован пока ещё не полностью, потому местами в коде встречаются "подготовленные", но недоделанные места. Играбельную версию и список владельцев авторских прав на использованные здесь ресурсы можно найти по ссылке:<br>
+**Внимание!** Godot 4.0.2 может болезненно реагировать на отсутствие папки ".godot" при первом запуске из репозитория. Рекомендую отказываться от загрузки main.tscn при первом запуске, пока редактор не произведёт реимпорт.
+
+Это исходный код (Godot4-проект) игры One Picture Quest версии 0.1. Функционал из диздока реализован пока ещё не полностью, потому местами в коде встречаются "подготовленные", но недоделанные места. Играбельную версию и список владельцев авторских прав на использованные здесь ресурсы можно найти по ссылке:<br>
 https://kotomaru.itch.io/one-picture-quest<br>
 Дизайнерская документация:<br>
 https://www.chitalnya.ru/work/3529463/
@@ -32,7 +34,9 @@ https://www.chitalnya.ru/work/3529463/
 
 ---
 
-This is source code (Godot-project) of "One Picture Quest" game, version 0.1. GDD's functionality yet not fully implemented, so there are "prepared" but not finished pieces. Playable version and full credits list with copyrights of resources used here can be found at the link:<br>
+**Caution!** Godot 4.0.2 may painfully react on absence of ".godot" folder during first load of the project from repository. Be advised to avoid loading main.tscn before editor made a reimport.
+
+This is source code (Godot4-project) of "One Picture Quest" game, version 0.1. GDD's functionality yet not fully implemented, so there are "prepared" but not finished pieces. Playable version and full credits list with copyrights of resources used here can be found at the link:<br>
 https://kotomaru.itch.io/one-picture-quest<br>
 Game design document (in Russian):<br>
 https://www.chitalnya.ru/work/3529463/
