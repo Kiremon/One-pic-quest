@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b73fnq2chd6gf"]
+
+[ext_resource type="Script" path="res://scripts/sound/sound_handler.gd" id="1_vd5x1"]
+
+[node name="sound" type="Node"]
+script = ExtResource("1_vd5x1")
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
+[node name="speech" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0

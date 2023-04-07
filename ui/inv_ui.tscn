@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://8beu3inlfxff"]
+
+[ext_resource type="Theme" uid="uid://c57y00ookbpsd" path="res://settings/main_theme.tres" id="1_fnra1"]
+[ext_resource type="Script" path="res://scripts/ui/inv_ui_handler.gd" id="2_tqx5j"]
+
+[node name="inv_ui" type="Control"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_fnra1")
+script = ExtResource("2_tqx5j")
+inv_obj_prefub_file = "res://ui/inv_ui_obj.tscn"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VFlowContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

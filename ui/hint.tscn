@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmsotpkettkyd"]
+
+[ext_resource type="Theme" uid="uid://c57y00ookbpsd" path="res://settings/main_theme.tres" id="1_om0ed"]
+[ext_resource type="Script" path="res://scripts/ui/hint_handler.gd" id="1_y38gu"]
+
+[node name="hint" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_om0ed")
+script = ExtResource("1_y38gu")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -52.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="text" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "test text fngldfg hfg"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="CenterContainer/text"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_right = 10.0
+grow_horizontal = 2
+grow_vertical = 2

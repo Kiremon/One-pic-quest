@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=3 uid="uid://bvib8p3fynu8l"]
+
+[ext_resource type="Script" path="res://scripts/common/scenario_handler.gd" id="1_j361a"]
+[ext_resource type="PackedScene" uid="uid://cmsotpkettkyd" path="res://ui/hint.tscn" id="2_ahos2"]
+[ext_resource type="Script" path="res://scripts/object/DB_objects.gd" id="3_6n4a7"]
+[ext_resource type="PackedScene" uid="uid://bnout5yl8d07d" path="res://ui/speech_screen.tscn" id="4_ykok2"]
+[ext_resource type="Script" path="res://scenario/scenario.gd" id="6_d4jfc"]
+[ext_resource type="PackedScene" uid="uid://crxouqjklcyk0" path="res://ui/hand.tscn" id="6_lfu6q"]
+[ext_resource type="PackedScene" uid="uid://8beu3inlfxff" path="res://ui/inv_ui.tscn" id="8_3a0rx"]
+[ext_resource type="Script" path="res://scripts/ui/screen_block_handler.gd" id="8_27vjs"]
+[ext_resource type="Script" path="res://scripts/ui/curtain_handler.gd" id="9_4nflt"]
+[ext_resource type="PackedScene" uid="uid://b73fnq2chd6gf" path="res://common_objs/sound.tscn" id="9_qeswg"]
+[ext_resource type="PackedScene" uid="uid://dgwx3ljfxu5hc" path="res://ui/menu.tscn" id="11_y2tru"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_j361a")
+sounds_global_dir = "res://sounds"
+scenario_script = ExtResource("6_d4jfc")
+
+[node name="game" type="Node2D" parent="."]
+
+[node name="DB_objects" type="Node" parent="."]
+script = ExtResource("3_6n4a7")
+
+[node name="sound" parent="." instance=ExtResource("9_qeswg")]
+
+[node name="hint" parent="." instance=ExtResource("2_ahos2")]
+visible = false
+
+[node name="inv_ui" parent="." instance=ExtResource("8_3a0rx")]
+offset_left = -200.0
+
+[node name="speech_screen" parent="." instance=ExtResource("4_ykok2")]
+visible = false
+
+[node name="hand" parent="." instance=ExtResource("6_lfu6q")]
+
+[node name="screen_block" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_27vjs")
+
+[node name="curtain" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("9_4nflt")
+
+[node name="menu" parent="." instance=ExtResource("11_y2tru")]
+
+[node name="version" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "v 0.1"

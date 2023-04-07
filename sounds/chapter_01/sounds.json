@@ -1,0 +1,9 @@
+{
+	"plant_watering" : "plant_watering.ogg",
+	"open_door" : "door.ogg",
+	
+	"mus_intro" : "music/introduction.ogg",
+	"mus_climax" : "music/climax.ogg",
+	"mus_despair" : "music/despair.ogg",
+	"mus_ending" : "music/Ghostrifter-Waiting-game-version.ogg",
+}

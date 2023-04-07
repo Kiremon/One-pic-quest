@@ -1,0 +1,495 @@
+[gd_scene load_steps=15 format=3 uid="uid://dau2onk0vr5t7"]
+
+[ext_resource type="Script" path="res://scripts/loc/loc_handler.gd" id="1_g4xwt"]
+[ext_resource type="Texture2D" uid="uid://co4q2dgdeoq22" path="res://img/ch01_balcony/bg.jpg" id="2_2jh7q"]
+[ext_resource type="Script" path="res://scripts/object/object_handler.gd" id="4_5b78f"]
+[ext_resource type="Texture2D" uid="uid://c20jekmy3bodb" path="res://img/ch01_balcony/couch.png" id="5_1ary7"]
+[ext_resource type="Script" path="res://scripts/loc/walkzone.gd" id="5_ssu13"]
+[ext_resource type="Script" path="res://scripts/object/object_sensor.gd" id="6_mepa8"]
+[ext_resource type="Script" path="res://scripts/loc/wz_axis.gd" id="6_tei2n"]
+[ext_resource type="Script" path="res://objects/chapter_01/obj_handler_plant.gd" id="8_7obcr"]
+[ext_resource type="Texture2D" uid="uid://cgq1wy1ritgrq" path="res://img/ch01_balcony/table.png" id="8_rwu3a"]
+[ext_resource type="Texture2D" uid="uid://4mecwkn1wsly" path="res://img/ch01_balcony/lamp.png" id="9_o4y82"]
+[ext_resource type="PackedScene" uid="uid://uep5asxf2w8x" path="res://img/checkmark.tscn" id="10_ioeh1"]
+[ext_resource type="Texture2D" uid="uid://dbqyhtlsj7i3v" path="res://img/ch01_balcony/plant3.png" id="10_jhh6v"]
+[ext_resource type="Texture2D" uid="uid://bvsbab25mx0h" path="res://img/ch01_balcony/door.png" id="15_e0hav"]
+[ext_resource type="Script" path="res://objects/chapter_01/obj_handler_door.gd" id="15_sqghy"]
+
+[node name="ch1_balcony" type="Node2D"]
+script = ExtResource("1_g4xwt")
+player_speed = 150.0
+player_scale = 8.0
+
+[node name="obj_back" type="Node2D" parent="."]
+
+[node name="room" type="Sprite2D" parent="obj_back"]
+position = Vector2(428, 0)
+scale = Vector2(0.500232, 0.500232)
+texture = ExtResource("2_2jh7q")
+centered = false
+
+[node name="window" type="Node2D" parent="obj_back"]
+position = Vector2(748, 516)
+script = ExtResource("4_5b78f")
+obj_id = "window"
+
+[node name="button3" type="Control" parent="obj_back/window"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -149.0
+offset_top = -22.0
+offset_right = -77.0
+offset_bottom = 56.0
+script = ExtResource("6_mepa8")
+
+[node name="button" type="Control" parent="obj_back/window"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -89.0
+offset_top = -95.0
+offset_right = 1.0
+offset_bottom = 69.0
+script = ExtResource("6_mepa8")
+
+[node name="button2" type="Control" parent="obj_back/window"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -3.0
+offset_top = -132.0
+offset_right = 119.0
+offset_bottom = -26.0
+script = ExtResource("6_mepa8")
+
+[node name="button4" type="Control" parent="obj_back/window"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -10.0
+offset_top = -30.0
+offset_right = 53.0
+offset_bottom = 35.0
+script = ExtResource("6_mepa8")
+
+[node name="guitar" type="Node2D" parent="obj_back"]
+position = Vector2(1227, 351)
+script = ExtResource("4_5b78f")
+obj_id = "guitar"
+
+[node name="button" type="Control" parent="obj_back/guitar"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -35.0
+offset_top = -110.0
+offset_right = 34.0
+offset_bottom = 110.0
+script = ExtResource("6_mepa8")
+
+[node name="blood" type="Node2D" parent="obj_back"]
+position = Vector2(1238, 595)
+script = ExtResource("4_5b78f")
+obj_id = "blood"
+
+[node name="button" type="Control" parent="obj_back/blood"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -41.0
+offset_top = -25.0
+offset_right = 41.0
+offset_bottom = 27.0
+script = ExtResource("6_mepa8")
+
+[node name="plant1" type="Node2D" parent="obj_back"]
+position = Vector2(635, 619)
+script = ExtResource("8_7obcr")
+obj_id = "plant1"
+
+[node name="button" type="Control" parent="obj_back/plant1"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -17.0
+offset_top = -41.0
+offset_right = 26.0
+offset_bottom = 44.0
+script = ExtResource("6_mepa8")
+
+[node name="watered" parent="obj_back/plant1" instance=ExtResource("10_ioeh1")]
+visible = false
+position = Vector2(21, -38)
+
+[node name="plant2" type="Node2D" parent="obj_back"]
+position = Vector2(1188, 235)
+script = ExtResource("8_7obcr")
+obj_id = "plant2"
+
+[node name="button" type="Control" parent="obj_back/plant2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -42.0
+offset_top = -108.0
+offset_right = 39.0
+offset_bottom = 2.0
+script = ExtResource("6_mepa8")
+
+[node name="watered" parent="obj_back/plant2" instance=ExtResource("10_ioeh1")]
+visible = false
+position = Vector2(33, -105)
+
+[node name="bull" type="Node2D" parent="obj_back"]
+position = Vector2(1298, 204)
+script = ExtResource("4_5b78f")
+obj_id = "bull"
+
+[node name="button" type="Control" parent="obj_back/bull"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -49.0
+offset_top = -43.0
+offset_right = 51.0
+offset_bottom = 53.0
+script = ExtResource("6_mepa8")
+
+[node name="picture" type="Node2D" parent="obj_back"]
+position = Vector2(1127, 306)
+script = ExtResource("4_5b78f")
+obj_id = "picture"
+
+[node name="button" type="Control" parent="obj_back/picture"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -30.0
+offset_top = -98.0
+offset_right = 32.0
+offset_bottom = 92.0
+script = ExtResource("6_mepa8")
+
+[node name="mosaic1" type="Node2D" parent="obj_back"]
+position = Vector2(1011, 419)
+script = ExtResource("4_5b78f")
+obj_id = "mosaic"
+
+[node name="button" type="Control" parent="obj_back/mosaic1"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -35.0
+offset_top = -46.0
+offset_right = 25.0
+offset_bottom = 45.0
+script = ExtResource("6_mepa8")
+
+[node name="mosaic2" type="Node2D" parent="obj_back"]
+position = Vector2(958, 346)
+script = ExtResource("4_5b78f")
+obj_id = "mosaic"
+
+[node name="button" type="Control" parent="obj_back/mosaic2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -35.0
+offset_top = -46.0
+offset_right = 25.0
+offset_bottom = 45.0
+script = ExtResource("6_mepa8")
+
+[node name="mosaic3" type="Node2D" parent="obj_back"]
+position = Vector2(1055, 301)
+script = ExtResource("4_5b78f")
+obj_id = "mosaic"
+
+[node name="button" type="Control" parent="obj_back/mosaic3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -35.0
+offset_top = -46.0
+offset_right = 25.0
+offset_bottom = 45.0
+script = ExtResource("6_mepa8")
+
+[node name="mosaic4" type="Node2D" parent="obj_back"]
+position = Vector2(1355, 364)
+script = ExtResource("4_5b78f")
+obj_id = "mosaic"
+
+[node name="button" type="Control" parent="obj_back/mosaic4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -29.0
+offset_top = -49.0
+offset_right = 32.0
+offset_bottom = 45.0
+script = ExtResource("6_mepa8")
+
+[node name="cup" type="Node2D" parent="obj_back"]
+position = Vector2(1063, 502)
+script = ExtResource("4_5b78f")
+obj_id = "cup"
+
+[node name="button" type="Control" parent="obj_back/cup"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -10.0
+offset_top = -24.0
+offset_right = 9.0
+offset_bottom = 19.0
+script = ExtResource("6_mepa8")
+
+[node name="lonebook" type="Node2D" parent="obj_back"]
+position = Vector2(1100, 530)
+script = ExtResource("4_5b78f")
+obj_id = "lonebook"
+
+[node name="button" type="Control" parent="obj_back/lonebook"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -24.0
+offset_top = -14.0
+offset_right = 24.0
+offset_bottom = 18.0
+script = ExtResource("6_mepa8")
+
+[node name="biobooks" type="Node2D" parent="obj_back"]
+position = Vector2(900, 575)
+script = ExtResource("4_5b78f")
+obj_id = "biobooks"
+
+[node name="button" type="Control" parent="obj_back/biobooks"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -45.0
+offset_top = -21.0
+offset_right = 41.0
+offset_bottom = 36.0
+script = ExtResource("6_mepa8")
+
+[node name="musbooks" type="Node2D" parent="obj_back"]
+position = Vector2(832, 524)
+script = ExtResource("4_5b78f")
+obj_id = "musbooks"
+
+[node name="button" type="Control" parent="obj_back/musbooks"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -32.0
+offset_top = -28.0
+offset_right = 32.0
+offset_bottom = 19.0
+script = ExtResource("6_mepa8")
+
+[node name="drumstick" type="Node2D" parent="obj_back"]
+position = Vector2(695, 617)
+script = ExtResource("4_5b78f")
+obj_id = "drumstick"
+
+[node name="button" type="Control" parent="obj_back/drumstick"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -29.0
+offset_top = -21.0
+offset_right = 26.0
+offset_bottom = 21.0
+script = ExtResource("6_mepa8")
+
+[node name="chandelier" type="Node2D" parent="obj_back"]
+position = Vector2(902, 417)
+script = ExtResource("4_5b78f")
+obj_id = "chandelier"
+
+[node name="button" type="Control" parent="obj_back/chandelier"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -58.0
+offset_top = -7.0
+offset_right = 56.0
+offset_bottom = 46.0
+script = ExtResource("6_mepa8")
+
+[node name="jalousie" type="Node2D" parent="obj_back"]
+position = Vector2(738, 399)
+script = ExtResource("4_5b78f")
+obj_id = "jalousie"
+
+[node name="button" type="Control" parent="obj_back/jalousie"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -148.0
+offset_top = 26.0
+offset_right = -60.0
+offset_bottom = 97.0
+script = ExtResource("6_mepa8")
+
+[node name="button2" type="Control" parent="obj_back/jalousie"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -65.0
+offset_top = -13.0
+offset_right = 23.0
+offset_bottom = 58.0
+script = ExtResource("6_mepa8")
+
+[node name="button3" type="Control" parent="obj_back/jalousie"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 14.0
+offset_top = -61.0
+offset_right = 102.0
+offset_bottom = 10.0
+script = ExtResource("6_mepa8")
+
+[node name="button4" type="Control" parent="obj_back/jalousie"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 79.0
+offset_top = -103.0
+offset_right = 167.0
+offset_bottom = -32.0
+script = ExtResource("6_mepa8")
+
+[node name="obj_sort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="plant3" type="Node2D" parent="obj_sort"]
+position = Vector2(1339, 515)
+script = ExtResource("8_7obcr")
+obj_id = "plant3"
+
+[node name="Sprite2D" type="Sprite2D" parent="obj_sort/plant3"]
+position = Vector2(3, -76)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_jhh6v")
+
+[node name="button" type="Control" parent="obj_sort/plant3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -54.0
+offset_top = -165.0
+offset_right = 56.0
+offset_bottom = 18.0
+script = ExtResource("6_mepa8")
+
+[node name="watered" parent="obj_sort/plant3" instance=ExtResource("10_ioeh1")]
+visible = false
+position = Vector2(41, -144)
+
+[node name="table" type="Node2D" parent="obj_sort"]
+position = Vector2(1140, 516)
+
+[node name="sprite" type="Sprite2D" parent="obj_sort/table"]
+position = Vector2(-164, 64)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_rwu3a")
+
+[node name="lamp" type="Node2D" parent="obj_sort"]
+position = Vector2(598, 805)
+script = ExtResource("4_5b78f")
+obj_id = "lamp"
+
+[node name="button" type="Control" parent="obj_sort/lamp"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -36.0
+offset_top = -233.0
+offset_right = 33.0
+offset_bottom = -101.0
+script = ExtResource("6_mepa8")
+
+[node name="Sprite2D" type="Sprite2D" parent="obj_sort/lamp"]
+position = Vector2(1, -109)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_o4y82")
+
+[node name="obj_front" type="Node2D" parent="."]
+
+[node name="couch" type="Node2D" parent="obj_front"]
+position = Vector2(704, 856)
+script = ExtResource("4_5b78f")
+obj_id = "couch"
+
+[node name="Sprite2D" type="Sprite2D" parent="obj_front/couch"]
+position = Vector2(-12, -44)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_1ary7")
+
+[node name="button" type="Control" parent="obj_front/couch"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -86.0
+offset_top = -115.0
+offset_right = 65.0
+offset_bottom = 27.0
+script = ExtResource("6_mepa8")
+
+[node name="door" type="Node2D" parent="obj_front"]
+position = Vector2(1077, 601)
+script = ExtResource("15_sqghy")
+obj_id = "door"
+
+[node name="Sprite2D" type="Sprite2D" parent="obj_front/door"]
+position = Vector2(7, -32)
+scale = Vector2(2, 2)
+texture = ExtResource("15_e0hav")
+
+[node name="button" type="Control" parent="obj_front/door"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -56.0
+offset_top = -162.0
+offset_right = 69.0
+offset_bottom = 89.0
+script = ExtResource("6_mepa8")
+
+[node name="walkzone" type="Node2D" parent="."]
+visible = false
+
+[node name="main" type="Polygon2D" parent="walkzone"]
+color = Color(0, 0.286275, 0.956863, 0.615686)
+polygon = PackedVector2Array(577, 814, 1217, 430, 1357, 514, 717, 898)
+script = ExtResource("5_ssu13")
+
+[node name="x_axis" type="Line2D" parent="walkzone/main"]
+position = Vector2(712, 901)
+points = PackedVector2Array(0, 0, 65, -39)
+default_color = Color(0.133333, 0.364706, 0.988235, 1)
+script = ExtResource("6_tei2n")
+key_decrease = 1
+
+[node name="y_axis" type="Line2D" parent="walkzone/main"]
+position = Vector2(712, 901)
+points = PackedVector2Array(0, 0, -65, -39)
+default_color = Color(0.133333, 0.364706, 0.988235, 1)
+script = ExtResource("6_tei2n")
+key_increase = 2
+key_decrease = 3
+
+[node name="obstacles" type="Node2D" parent="."]
+visible = false
+
+[node name="abs0" type="Polygon2D" parent="obstacles"]
+color = Color(0.886275, 0.109804, 0.152941, 0.478431)
+polygon = PackedVector2Array(507, 801, 587, 849, 667, 801, 587, 753)
+
+[node name="abs1" type="Polygon2D" parent="obstacles"]
+color = Color(0.886275, 0.109804, 0.152941, 0.478431)
+polygon = PackedVector2Array(619, 858, 704, 807, 796, 862, 711, 913)
+
+[node name="abs2" type="Polygon2D" parent="obstacles"]
+color = Color(0.886275, 0.109804, 0.152941, 0.478431)
+polygon = PackedVector2Array(765, 674, 840, 719, 1180, 515, 1105, 470)
+
+[node name="abs3" type="Polygon2D" parent="obstacles"]
+color = Color(0.886275, 0.109804, 0.152941, 0.478431)
+polygon = PackedVector2Array(1224, 480, 1284, 444, 1224, 408, 1164, 444)
+
+[node name="abs4" type="Polygon2D" parent="obstacles"]
+color = Color(0.886275, 0.109804, 0.152941, 0.478431)
+polygon = PackedVector2Array(1337, 550, 1412, 505, 1352, 469, 1277, 514)
+
+[node name="enter_points" type="Node2D" parent="."]
+visible = false
+
+[node name="Marker2D" type="Marker2D" parent="enter_points"]
+position = Vector2(1027, 655)
+
+[node name="yardstick" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(737, 814)
+scale = Vector2(4, 4)
+color = Color(1, 1, 1, 0.337255)
+polygon = PackedVector2Array(0, 24, 40, 0, 0, -24, -40, 0)

@@ -1,0 +1,216 @@
+[gd_scene load_steps=38 format=3 uid="uid://dhcgq6iqfkebw"]
+
+[ext_resource type="PackedScene" uid="uid://dau2onk0vr5t7" path="res://locs/chapter_01/ch_1_balcony.tscn" id="1_4w7l5"]
+[ext_resource type="Script" path="res://scripts/loc/chapter_handler.gd" id="1_tghiu"]
+[ext_resource type="Script" path="res://scenario/chapter_01/scenario_ch1.gd" id="2_26u1l"]
+[ext_resource type="Script" path="res://scripts/object/DB_objects.gd" id="3_evr5k"]
+[ext_resource type="Script" path="res://scripts/object/GameObject.gd" id="3_yx0pi"]
+[ext_resource type="Script" path="res://objects/chapter_01/obj_window.gd" id="4_oihf1"]
+[ext_resource type="Texture2D" uid="uid://d2q8xthh6mf8s" path="res://img/ch01_balcony/window.png" id="7_buy3g"]
+[ext_resource type="Texture2D" uid="uid://o24cg5oap6j3" path="res://img/ch01_balcony/commission.png" id="8_l1emu"]
+[ext_resource type="Texture2D" uid="uid://d1augyr2bbbhp" path="res://img/ch01_balcony/guitar.png" id="9_ugucg"]
+[ext_resource type="PackedScene" uid="uid://dlg60r08qr5kp" path="res://common_objs/player.tscn" id="10_8gmdj"]
+[ext_resource type="Script" path="res://objects/chapter_01/obj_guitar.gd" id="10_um1uu"]
+[ext_resource type="Script" path="res://objects/chapter_01/obj_blood.gd" id="11_giauo"]
+[ext_resource type="Texture2D" uid="uid://dvx80yp8p04dk" path="res://img/ch01_balcony/plant3_inv.png" id="12_g6mb7"]
+[ext_resource type="Texture2D" uid="uid://3yrjw5vj04k7" path="res://img/ch01_balcony/blood.png" id="12_y7tyu"]
+[ext_resource type="Texture2D" uid="uid://bkvqfpshh8kan" path="res://img/ch01_balcony/plant1.png" id="13_1arp6"]
+[ext_resource type="Script" path="res://objects/chapter_01/obj_plant.gd" id="13_f576p"]
+[ext_resource type="Texture2D" uid="uid://cb5j430avoho6" path="res://img/ch01_balcony/plant2.png" id="14_yi6iy"]
+[ext_resource type="Texture2D" uid="uid://cjgpg4iobotk5" path="res://img/ch01_balcony/bull.png" id="17_ujjy1"]
+[ext_resource type="Texture2D" uid="uid://dp16ivulp7ygh" path="res://img/ch01_balcony/picture.png" id="19_nb48n"]
+[ext_resource type="Texture2D" uid="uid://44nw21xpw1m2" path="res://img/ch01_balcony/mosaic.png" id="20_2j5pg"]
+[ext_resource type="Script" path="res://objects/chapter_01/obj_cup.gd" id="21_x2bf1"]
+[ext_resource type="Texture2D" uid="uid://dp1jqhefemfav" path="res://img/ch01_balcony/cup.png" id="22_skhjl"]
+[ext_resource type="Texture2D" uid="uid://ctvbt24tbh5wh" path="res://img/ch01_balcony/lonebook.png" id="23_evws5"]
+[ext_resource type="Script" path="res://objects/chapter_01/obj_biobooks.gd" id="24_31hf2"]
+[ext_resource type="Texture2D" uid="uid://joe50wus5xbo" path="res://img/ch01_balcony/biobooks.png" id="25_34m65"]
+[ext_resource type="Texture2D" uid="uid://tp8jk1h146nn" path="res://img/ch01_balcony/lamp_inv.png" id="26_6q3ud"]
+[ext_resource type="Texture2D" uid="uid://cakxta4po87o8" path="res://img/ch01_balcony/musbooks.png" id="26_w2rhn"]
+[ext_resource type="Texture2D" uid="uid://bvtpdx0blkihk" path="res://img/ch01_balcony/drumstick.png" id="27_knm5r"]
+[ext_resource type="Texture2D" uid="uid://0pxihiu5bqrg" path="res://img/ch01_balcony/couch_inv.png" id="28_4ak8f"]
+[ext_resource type="Texture2D" uid="uid://de4grgg4615ig" path="res://img/ch01_balcony/chandelier.png" id="29_bgo32"]
+[ext_resource type="Texture2D" uid="uid://dchce2nj8f1x7" path="res://img/ch01_balcony/jalousie.png" id="30_v8ga1"]
+[ext_resource type="Texture2D" uid="uid://bvsbab25mx0h" path="res://img/ch01_balcony/door.png" id="31_2dcy7"]
+[ext_resource type="Script" path="res://objects/chapter_01/obj_door.gd" id="31_phquw"]
+[ext_resource type="Script" path="res://objects/chapter_01/obj_commission.gd" id="32_nl5as"]
+[ext_resource type="Texture2D" uid="uid://cv6jrqlm0hft6" path="res://img/ch01_balcony/rock.png" id="34_ptqpo"]
+[ext_resource type="Texture2D" uid="uid://dpvsig4o6dkey" path="res://img/ch01_balcony/musician.png" id="35_tvbyd"]
+[ext_resource type="Texture2D" uid="uid://issxxvlhifcr" path="res://img/ch01_balcony/idealist.png" id="36_gcu16"]
+
+[node name="chapter01" type="Node2D"]
+script = ExtResource("1_tghiu")
+sounds_dir = "res://sounds/chapter_01"
+scenario_script = ExtResource("2_26u1l")
+
+[node name="locs" type="Node2D" parent="."]
+
+[node name="ch1_balcony" parent="locs" instance=ExtResource("1_4w7l5")]
+
+[node name="DB_objects" type="Node" parent="."]
+script = ExtResource("3_evr5k")
+combinations_file = "res://objects/chapter_01/combinations.json"
+
+[node name="guitar" type="Node" parent="DB_objects"]
+script = ExtResource("10_um1uu")
+obj_id = "guitar"
+hint = "S_GUITAR_NAME"
+examine_phrases = ["S_GUITAR"]
+inv_texture = ExtResource("9_ugucg")
+
+[node name="blood" type="Node" parent="DB_objects"]
+script = ExtResource("11_giauo")
+obj_id = "blood"
+hint = "S_BLOOD_NAME"
+examine_phrases = []
+inv_texture = ExtResource("12_y7tyu")
+
+[node name="plant1" type="Node" parent="DB_objects"]
+script = ExtResource("13_f576p")
+obj_id = "plant1"
+hint = "S_PLANT_NAME"
+examine_phrases = ["S_PLANT"]
+inv_texture = ExtResource("13_1arp6")
+
+[node name="plant2" type="Node" parent="DB_objects"]
+script = ExtResource("13_f576p")
+obj_id = "plant2"
+hint = "S_PLANT_NAME"
+examine_phrases = ["S_PLANT"]
+inv_texture = ExtResource("14_yi6iy")
+
+[node name="plant3" type="Node" parent="DB_objects"]
+script = ExtResource("13_f576p")
+obj_id = "plant3"
+hint = "S_PLANT_NAME"
+examine_phrases = ["S_PLANT"]
+inv_texture = ExtResource("12_g6mb7")
+
+[node name="bull" type="Node" parent="DB_objects"]
+script = ExtResource("3_yx0pi")
+obj_id = "bull"
+hint = "S_BULL_NAME"
+examine_phrases = ["S_BULL"]
+inv_texture = ExtResource("17_ujjy1")
+
+[node name="picture" type="Node" parent="DB_objects"]
+script = ExtResource("3_yx0pi")
+obj_id = "picture"
+hint = "S_PICTURE_NAME"
+examine_phrases = ["S_PICTURE"]
+inv_texture = ExtResource("19_nb48n")
+
+[node name="mosaic" type="Node" parent="DB_objects"]
+script = ExtResource("3_yx0pi")
+obj_id = "mosaic"
+hint = "S_MOSAIC_NAME"
+examine_phrases = ["S_MOSAIC"]
+inv_texture = ExtResource("20_2j5pg")
+
+[node name="cup" type="Node" parent="DB_objects"]
+script = ExtResource("21_x2bf1")
+obj_id = "cup"
+hint = "S_CUP_NAME"
+examine_phrases = []
+inv_texture = ExtResource("22_skhjl")
+
+[node name="lonebook" type="Node" parent="DB_objects"]
+script = ExtResource("3_yx0pi")
+obj_id = "lonebook"
+hint = "S_LONEBOOK_NAME"
+examine_phrases = ["S_LONEBOOK"]
+inv_texture = ExtResource("23_evws5")
+
+[node name="biobooks" type="Node" parent="DB_objects"]
+script = ExtResource("24_31hf2")
+obj_id = "biobooks"
+hint = "S_BIOBOOKS_NAME"
+examine_phrases = ["S_BIOBOOKS"]
+inv_texture = ExtResource("25_34m65")
+
+[node name="musbooks" type="Node" parent="DB_objects"]
+script = ExtResource("3_yx0pi")
+obj_id = "musbooks"
+hint = "S_MUSBOOKS_NAME"
+examine_phrases = ["S_MUSBOOKS"]
+inv_texture = ExtResource("26_w2rhn")
+
+[node name="window" type="Node" parent="DB_objects"]
+script = ExtResource("4_oihf1")
+obj_id = "window"
+hint = "S_WINDOW_NAME"
+examine_phrases = []
+inv_texture = ExtResource("7_buy3g")
+
+[node name="drumstick" type="Node" parent="DB_objects"]
+script = ExtResource("3_yx0pi")
+obj_id = "drumstick"
+hint = "S_DRUMSTICK_NAME"
+examine_phrases = ["S_DRUMSTICK"]
+inv_texture = ExtResource("27_knm5r")
+
+[node name="lamp" type="Node" parent="DB_objects"]
+script = ExtResource("3_yx0pi")
+obj_id = "lamp"
+hint = "S_LAMP_NAME"
+examine_phrases = ["S_LAMP"]
+inv_texture = ExtResource("26_6q3ud")
+
+[node name="chandelier" type="Node" parent="DB_objects"]
+script = ExtResource("3_yx0pi")
+obj_id = "chandelier"
+hint = "S_CHANDELIER_NAME"
+examine_phrases = ["S_CHANDELIER"]
+inv_texture = ExtResource("29_bgo32")
+
+[node name="couch" type="Node" parent="DB_objects"]
+script = ExtResource("3_yx0pi")
+obj_id = "couch"
+hint = "S_COUCH_NAME"
+examine_phrases = ["S_COUCH"]
+inv_texture = ExtResource("28_4ak8f")
+
+[node name="jalousie" type="Node" parent="DB_objects"]
+script = ExtResource("3_yx0pi")
+obj_id = "jalousie"
+hint = "S_JALOUSIE_NAME"
+examine_phrases = ["S_JALOUSIE"]
+inv_texture = ExtResource("30_v8ga1")
+
+[node name="door" type="Node" parent="DB_objects"]
+script = ExtResource("31_phquw")
+obj_id = "door"
+hint = "S_DOOR_NAME"
+examine_phrases = [""]
+inv_texture = ExtResource("31_2dcy7")
+
+[node name="commission" type="Node" parent="DB_objects"]
+script = ExtResource("32_nl5as")
+obj_id = "commission"
+hint = "S_COMMISSION_NAME"
+examine_phrases = ["S_COMMISSION"]
+inv_texture = ExtResource("8_l1emu")
+
+[node name="rock" type="Node" parent="DB_objects"]
+script = ExtResource("3_yx0pi")
+obj_id = "rock"
+hint = "S_ROCK_NAME"
+examine_phrases = ["S_ROCK"]
+inv_texture = ExtResource("34_ptqpo")
+
+[node name="musician" type="Node" parent="DB_objects"]
+script = ExtResource("3_yx0pi")
+obj_id = "musician"
+hint = "S_MUSICIAN_NAME"
+examine_phrases = ["S_MUSICIAN"]
+inv_texture = ExtResource("35_tvbyd")
+
+[node name="idealist" type="Node" parent="DB_objects"]
+script = ExtResource("3_yx0pi")
+obj_id = "idealist"
+hint = "S_IDEALIST_NAME"
+examine_phrases = ["S_IDEALIST"]
+inv_texture = ExtResource("36_gcu16")
+
+[node name="player" parent="." instance=ExtResource("10_8gmdj")]
+position = Vector2(1332, 790)

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cuv011hbs8ycq"]
+
+[ext_resource type="Script" path="res://scripts/common/file_paths.gd" id="1_s67ic"]
+
+[resource]
+script = ExtResource("1_s67ic")
+DB_sounds = "res://scripts/sound/DB_sounds.gd"
+inventory = "res://scripts/common/inventory.gd"
+player_mover = "res://scripts/player/player_mover.gd"
+chapter1 = "res://scenario/chapter_01/chapter_01.tscn"

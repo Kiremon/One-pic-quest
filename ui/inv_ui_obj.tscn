@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://cc5do7h1nfymw"]
+
+[ext_resource type="Texture2D" uid="uid://joe50wus5xbo" path="res://img/ch01_balcony/biobooks.png" id="1_w4l57"]
+[ext_resource type="Script" path="res://scripts/object/obj_inv_handler.gd" id="2_24ocv"]
+[ext_resource type="Script" path="res://scripts/object/object_sensor.gd" id="3_epf8d"]
+
+[sub_resource type="Animation" id="Animation_cj818"]
+resource_name = "add_me"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.217638, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.225313, 1.00001),
+"update": 0,
+"values": [-6.28319, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_a5lwq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vqewj"]
+_data = {
+"RESET": SubResource("Animation_a5lwq"),
+"add_me": SubResource("Animation_cj818")
+}
+
+[node name="TextureRect" type="TextureRect"]
+custom_minimum_size = Vector2(90, 90)
+offset_right = 90.0
+offset_bottom = 90.0
+rotation = -6.28319
+scale = Vector2(1e-05, 1e-05)
+mouse_filter = 2
+texture = ExtResource("1_w4l57")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_24ocv")
+
+[node name="ObjectSensor" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_epf8d")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vqewj")
+}

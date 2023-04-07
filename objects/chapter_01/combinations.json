@@ -1,0 +1,187 @@
+{
+	"blood" : {
+		"plant3" : {
+			"speech" : [{ "text" : "S_BLOOD_BLOCK" }]
+		},
+		"lamp" : {
+			"speech" : [{ "text" : "S_BLOOD_BLOCK" }]
+		},
+		"bull" : {
+			"speech" : [{ "text" : "S_BLOOD_BULL" }]
+		},
+		"guitar" : {
+			"speech" : [{ "text" : "S_BLOOD_MUSIC" }]
+		},
+		"drumstick" : {
+			"speech" : [{ "text" : "S_BLOOD_MUSIC" }]
+		},
+		"rock" : {
+			"speech" : [{ "text" : "S_BLOOD_MUSIC" }]
+		},
+		"commission" : {
+			"speech" : [{ "text" : "S_BLOOD_COMMISSION" }]
+		},
+		"musician" : {
+			"speech" : [
+				{ "text" : "S_BLOOD_MUSICIAN_1" },
+				{ "text" : "S_BLOOD_MUSICIAN_2" }],
+			"actor" : "blood",
+			"action" : "give_idealist"
+		},
+	},
+	"plant1" : {
+		"guitar" : {
+			"speech" : [{ "text" : "S_PLANT_MUSIC" }]
+		},
+		"drumstick" : {
+			"speech" : [{ "text" : "S_PLANT_MUSIC" }]
+		},
+		"rock" : {
+			"speech" : [{ "text" : "S_PLANT_MUSIC" }]
+		},
+		"commission" : {
+			"speech" : [{ "text" : "S_PLANT_COMMISSION" }]
+		},
+		"cup" : {
+			"actor" : "plant1",
+			"action" : "water_me"
+		}
+	},
+	"plant2" : {
+		"guitar" : {
+			"speech" : [{ "text" : "S_PLANT_MUSIC" }]
+		},
+		"drumstick" : {
+			"speech" : [{ "text" : "S_PLANT_MUSIC" }]
+		},
+		"rock" : {
+			"speech" : [{ "text" : "S_PLANT_MUSIC" }]
+		},
+		"commission" : {
+			"speech" : [{ "text" : "S_PLANT_COMMISSION" }]
+		},
+		"cup" : {
+			"actor" : "plant2",
+			"action" : "water_me"
+		}
+	},
+	"plant3" : {
+		"guitar" : {
+			"speech" : [{ "text" : "S_PLANT_MUSIC" }]
+		},
+		"drumstick" : {
+			"speech" : [{ "text" : "S_PLANT_MUSIC" }]
+		},
+		"rock" : {
+			"speech" : [{ "text" : "S_PLANT_MUSIC" }]
+		},
+		"commission" : {
+			"speech" : [{ "text" : "S_PLANT_COMMISSION" }]
+		},
+		"cup" : {
+			"actor" : "plant3",
+			"action" : "water_me"
+		}
+	},
+	"bull" : {
+		"commission" : {
+			"speech" : [{ "text" : "S_BULL_COMMISSION" }]
+		}
+	},
+	"guitar" : {
+		"window" : {
+			"speech" : [{ "text" : "S_GUITAR_WINDOW" }]
+		},
+		"drumstick" : {
+			"actor" : "guitar",
+			"action" : "give_rock"
+		},
+		"commission" : {
+			"speech" : [{ "text" : "S_GUITAR_COMMISSION" }]
+		},
+		"musbooks" : {
+			"actor" : "guitar",
+			"action" : "play_guitar"
+		},
+	},
+	"lonebook" : {
+		"biobooks" : {
+			"speech" : [{ "text" : "S_LONEBOOK_BOOKS" }]
+		},
+		"musbooks" : {
+			"speech" : [{ "text" : "S_LONEBOOK_BOOKS" }]
+		}
+	},
+	"biobooks" : {
+		"blood" : {
+			"speech" : [{ "text" : "S_BIOBOOKS_BLOOD" }]
+		},
+		"plant1" : {
+			"speech" : [{ "text" : "S_BIOBOOKS_PLANT" }]
+		},
+		"plant2" : {
+			"speech" : [{ "text" : "S_BIOBOOKS_PLANT" }]
+		},
+		"plant3" : {
+			"speech" : [{ "text" : "S_BIOBOOKS_PLANT" }]
+		},
+		"bull" : {
+			"speech" : [{ "text" : "S_BIOBOOKS_BULL" }]
+		},
+		"guitar" : {
+			"speech" : [{ "text" : "S_BIOBOOKS_GUITAR" }]
+		},
+		"picture" : {
+			"speech" : [{ "text" : "S_BIOBOOKS_PICTURE" }]
+		},
+		"musbooks" : {
+			"speech" : [{ "text" : "S_BIOBOOKS_MUSBOOKS" }]
+		},
+		"drumstick" : {
+			"speech" : [{ "text" : "S_BIOBOOKS_DRUMSTICK" }]
+		},
+		"rock" : {
+			"speech" : [{ "text" : "S_BIOBOOKS_ROCK" }],
+			"actor" : "biobooks",
+			"action" : "give_musician"
+		},
+	},
+	"musbooks" : {
+		"drumstick" : {
+			"speech" : [{ "text" : "S_MUSBOOKS_DRUMSTICK" }]
+		},
+		"rock" : {
+			"speech" : [{ "text" : "S_MUSBOOKS_ROCK" }]
+		},
+		"musician" : {
+			"speech" : [{ "text" : "S_MUSBOOKS_MUSICIAN" }]
+		},
+		"idealist" : {
+			"speech" : [{ "text" : "S_MUSBOOKS_MUSICIAN" }]
+		}
+	},
+	"chandelier" : {
+		"commission" : {
+			"speech" : [{ "text" : "S_CHANDELIER_COMMISSION" }]
+		}
+	},
+	"commission" : {
+		"lonebook" : {
+			"speech" : [{ "text" : "S_COMMISSION_BOOKS" }]
+		},
+		"biobooks" : {
+			"speech" : [{ "text" : "S_COMMISSION_BOOKS" }]
+		},
+		"musbooks" : {
+			"speech" : [{ "text" : "S_COMMISSION_BOOKS" }]
+		},
+		"idealist" : {
+			"speech" : [
+				{ "text" : "S_COMMISSION_IDEALIST_1"},
+				{ "text" : "S_COMMISSION_IDEALIST_2"},
+				{ "text" : "S_COMMISSION_IDEALIST_3"}],
+			"actor" : "commission",
+			"action" : "reach_despair"
+		}
+	},
+}
