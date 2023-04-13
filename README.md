@@ -46,7 +46,7 @@ I'm publishing all that stuff as an example of my code and program architecture.
 <h3>Short guide</h3>
 Base scene "main.tscn" contains main game shell: user interface and "scenario_handler.gd", which handles the game start. Gameplay itself begins inside chapters - separate scenes, loaded in "main.tscn" when needed.
 
-Common services for whole project are accessible though singletons:
+Common services for whole project are accessible through singletons:
 
 * thesaurus.gd - dictionary of constants, shared by indirectly related objects.
 * story_singleton.gd - everything to manage the story.
